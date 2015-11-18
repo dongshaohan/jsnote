@@ -9,3 +9,5 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	* 函数的length值等于形参个数.
 	* arguments的length值等于实参个数.
 	* object对象无length值.
+
+3. 字符串API`charCodeAt`返回的unicode编码，通过toString(16)转成16进制，利用正则`/\u(00)“转换后的16位编码”/`可精确匹配。
