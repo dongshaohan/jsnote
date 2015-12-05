@@ -45,7 +45,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 6. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
 	```javascript
-	function unique(arr) {
+	function unique (arr) {
 		var ret = []
 		var hash = {}
 
