@@ -75,3 +75,5 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	   		return null;
 	}
 	```
+
+7. JSONP跨域原理解析
