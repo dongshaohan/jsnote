@@ -85,6 +85,21 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	缺点：如果返回的数据格式有问题或返回失败了，并不会报错。而且只支持GET而不支持POST等其它类型的HTTP请求。
 	```
 
-9. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，函数尽量动态。
+9. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
 	
-	这实际上就是 currying（柯里化），也就是把一个多变量的函数变成一系列单变量的函数。每个函数接收一个参数，然后返回一个接收余下参数并返回结果的新函数。这个过程中利用了闭包（closure）。也就是说，这种情况下，是一个函数返回另一个函数。
+	```javascript
+	这实际上就是 currying（柯里化），也就是把一个多变量的函数变成一系列单变量的函数。每个函数接收一个参数，然后返回一个接收余下参数并返回结果的新函数。
+	这个过程中利用了闭包（closure）。也就是说，这种情况下，是一个函数返回另一个函数。
+	
+	function add (x) {
+	    var sum = x;
+	    var tmp = function (y) {
+	        sum = sum + y;
+	        return tmp;
+	    };
+	    tmp.toString = function () {
+	        return sum;
+	    };
+	    return tmp;
+	}
+	```
