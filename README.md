@@ -76,7 +76,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	}
 	```
 
-7. JSONP跨域原理解析
+8. JSONP跨域原理解析
 	
 	```javascript
 	原理：利用在页面中创建<script>节点的方法向不同域提交HTTP请求并且可在url中指定回调函数，  
