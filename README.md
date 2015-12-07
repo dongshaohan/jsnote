@@ -88,10 +88,11 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 9. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
 	
 	```javascript
-	/* 这实际上就是 currying（柯里化），也就是把一个多变量的函数变成一系列单变量的函数。
-	   每个函数接收一个参数，然后返回一个接收余下参数并返回结果的新函数。
-	   这个过程中利用了闭包（closure）。也就是说，这种情况下，是一个函数返回另一个函数。*/
-	
+	/* 
+	 * 这实际上就是 currying（柯里化），也就是把一个多变量的函数变成一系列单变量的函数。
+	 * 每个函数接收一个参数，然后返回一个接收余下参数并返回结果的新函数。
+	 * 这个过程中利用了闭包（closure）。也就是说，这种情况下，是一个函数返回另一个函数。
+	 */
 	function add (x) {
 	    var sum = x;
 	    var all = function (y) {
@@ -103,6 +104,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	    };
 	    return all;
 	}
-	/* 这个知识点主要使用到在JavaScript中，打印和相加计算，会分别调用toString或valueOf函数，
-	   所以我们可以重写all的toString或valueOf方法，使其返回sum的值。*/
+	/* 
+	 * 这个知识点主要使用到在JavaScript中，打印和相加计算，会分别调用toString或valueOf函数，
+	 * 所以我们可以重写all的toString或valueOf方法，使其返回sum的值。
+	 */
 	```
