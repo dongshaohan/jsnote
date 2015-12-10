@@ -116,7 +116,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	var b = 10;  
 	function a (c) {  
 		alert(b);
-	    b = 100;  
+	    var b = 100;  
 	    alert(b);  
 	    anguments[0] = 2; 
 	    alert(c);  
@@ -124,5 +124,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	a(3);
 	alert(b);
 
-	// 答案：underfined 100 2 10
+	/* 答案：underfined 100 2 10
+	 * 1、该作用域下，js引擎会先查找所有声明的变量并赋值underfined，b已经声明，但此时还未赋值，所以b的值还是underfined。
+	 * 2、b已经赋值100，alert结果100。
+	 * 3、c传进去时是3，但c = anguments[0] = 2，即此时c等于2。
+	 * 4、当前环境是全局作用域下，变量b在该环境下的值为10，故alert的结果为10。
+	 */
 	```
