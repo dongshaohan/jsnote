@@ -109,3 +109,5 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 * 所以我们可以重写all的toString或valueOf方法，使其返回sum的值。
 	 */
 	```
+
+10. 下面这道题，同样是在面试YY时遇到，主要考察作用域链。
