@@ -110,4 +110,19 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-10. 下面这道题，同样是在面试YY时遇到，主要考察作用域链。
+10. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
+
+	```javascript
+	var b = 10;  
+	function a (c) {  
+		alert(b);
+	    b = 100;  
+	    alert(b);  
+	    anguments[0] = 2; 
+	    alert(c);  
+	}  
+	a(3);
+	alert(b)  
+
+	// 答案：underfined 100 2 10
+	```
