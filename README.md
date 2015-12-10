@@ -122,7 +122,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	    alert(c);  
 	}  
 	a(3);
-	alert(b)  
+	alert(b);
 
 	// 答案：underfined 100 2 10
 	```
