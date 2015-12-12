@@ -105,7 +105,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	    return all;
 	}
 	/* 
-	 * 这个知识点主要使用到在JavaScript中，打印和相加计算，会分别调用toString或valueOf函数，
+	 * 这个知识点主要用到，在JavaScript中，打印和相加计算，会分别调用toString或valueOf函数，
 	 * 所以我们可以重写all的toString或valueOf方法，使其返回sum的值。
 	 */
 	```
