@@ -96,6 +96,12 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	},
 	bar = foo.func;
 	bar();
+
+	/* 
+	 * 答案 function () { alert(this.bar) }
+	 * 把foo.func函数赋值给全局变量bar然后执行，这等价于执行全局函数。全局函数的this是指向window的，
+	 * 所以alert(this.bar)等于alert(window.bar)，也就是alert函数自身。
+	 */
 	```
 
 10. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
