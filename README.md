@@ -85,7 +85,12 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	缺点：如果返回的数据格式有问题或返回失败了，并不会报错。而且只支持GET而不支持POST等其它类型的HTTP请求。
 	```
 
-9. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
+9. iframe跨域原理解析
+	
+	```javascript
+	```
+	
+10. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
 	
 	```javascript
 	/* 
@@ -110,7 +115,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-10. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
+11. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
 
 	```javascript
 	var b = 10;  
@@ -133,7 +138,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-11. 了解变量声明提升和上下文对象。
+12. 了解变量声明提升和上下文对象。
 	
 	```javascript
 	var a = 10;  
