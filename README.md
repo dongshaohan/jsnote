@@ -99,7 +99,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	        sum = i + y;
 	        return all;
 	    };
-	    all.toString = function () {
+	    all.toString = all.valueOf = function () {
 	        return sum;
 	    };
 	    return all;
