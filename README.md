@@ -32,7 +32,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	(0.2 * 0.1).toFixed(1)  // 0.2
 	```
 
-5. 关于Ajax回调函数执行window.open等打开新窗口方法浏览器不支持解决方案
+5. 关于Ajax回调函数执行window.open等打开新窗口方法浏览器不支持解决方案。
 	
 	```javascript
 	// 执行ajax时关闭异步，也就是把asnyc属性设置为false即可解决
@@ -85,11 +85,19 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	缺点：如果返回的数据格式有问题或返回失败了，并不会报错。而且只支持GET而不支持POST等其它类型的HTTP请求。
 	```
 
-9. iframe跨域原理解析
+9. 也是YY一道面试题，考察this作用域。
 	
 	```javascript
+	var foo = {
+		bar: '你好',
+		func: function () {
+			alert(this.bar);
+		}
+	},
+	bar = foo.func;
+	bar();
 	```
-	
+
 10. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
 	
 	```javascript
