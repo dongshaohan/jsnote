@@ -173,3 +173,12 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	```
 
 13. 简单template实现原理。
+
+	模板写法:
+	```javascript
+	<ul>
+    <% for(var i in items){ %>
+        <li class='<%= items[i].status %>'><%= items[i].text %></li>
+    <% } %>
+	</ul>
+	```
