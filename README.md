@@ -172,7 +172,15 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-13. 简单template实现原理。
+13. JavaScript replace(RegExp, Function)解析
+	
+	template引擎的实现原理是通过正则匹配目标字串，replace传匿名函数对即将替换目标文本的字串操作， 
+	replace第二参数传匿名函数如下解析。
+	```javascript
+
+	```
+
+14. 简单template实现原理。
 
 	模板写法:
 	```javascript
