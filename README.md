@@ -171,3 +171,5 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 * 3、由于变量声明提升和赋值，此时的a还是100。
 	 */
 	```
+
+13. 简单template实现原理。
