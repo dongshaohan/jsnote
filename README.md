@@ -177,7 +177,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	template引擎的实现原理是通过正则匹配目标字串，replace传匿名函数对即将替换目标文本的字符串操作，那么该匿名函数具体内部是如何执行的，如下。
 	```javascript
 	var str = 'dongshaohan';
-	str.replace(/a/g, function () {
+	var reg = /a/g;
+	str.replace(reg, function () {
 		for ( var i = 0, len = arguments.length; i < len; i++ ) {   
         	console.log("第"+ (i + 1) +"个参数的值："+ arguments[i]);   
 		};   
@@ -190,9 +191,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	第2个参数的值：9
 	第3个参数的值：dongshaohan
 	/*
-	 *
-	 *
-	 *
+	 * 匿名函数执行了两次，因为匹配到两次
+	 * 第一个参数是通过reg匹配出来的结果，也就是表示匹配到的字符
+	 * 第二个参数是匹配结果在str中的索引位置
+	 * 第三个参数是str字符串本身
 	 */
 	```
 
