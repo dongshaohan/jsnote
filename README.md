@@ -177,12 +177,12 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	模板写法:
 	```javascript
 	<ul>
-    <% for(var i in items){ %>
+    <% for ( var i in items ) { %>
         <li class='<%= items[i].status %>'><%= items[i].text %></li>
     <% } %>
 	</ul>
 	```
 	实现原理：
-	*. 遇到普通的文本直接当成字符串拼接。
-	*. 遇到`interpolate`(即`<%= %>`)，将其中的内容当成变量拼接在字符串中。
-	*. 遇到`evaluate`(即`<% %>`)，直接当成代码。
+	* 遇到普通的文本直接当成字符串拼接。
+	* 遇到`interpolate`(即`<%= %>`)，将其中的内容当成变量拼接在字符串中。
+	* 遇到`evaluate`(即`<% %>`)，直接当成代码。
