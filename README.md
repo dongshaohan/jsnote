@@ -271,3 +271,11 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	* 遇到普通的文本直接当成字符串拼接。
 	* 遇到`interpolate`(即`<%= %>`)，将其中的内容当成变量拼接在字符串中。
 	* 遇到`evaluate`(即`<% %>`)，直接当成代码。
+
+15. 货币快速换算
+	
+	```javascript
+	var s = '1234567.89';
+	parseFloat(s).toLocaleString(); // 1,234,567.89
+	s.replace(/(\d)(?=(?:\d{3})+(?:\.|$))/g, '$1,'); // 1,234,567.89
+	```
