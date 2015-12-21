@@ -3,17 +3,19 @@
 underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，
 所以正确写法是使用void 加上任何数字，如`var xxx = void 0`，void加数字结果总是返回underfined。
 
-2. 关于length
+2. underfined、null、0、false、NaN、空字符串的逻辑结果均为false
+
+3. 关于length
 	1. 字符串的length值等于字符串个数.
 	* 数组的length值等于数组长度.
 	* 函数的length值等于形参个数.
 	* arguments的length值等于实参个数.
 	* object对象无length值.
 
-3. 字符串API `charCodeAt`返回的unicode编码，通过toString(16)转成16进制，利用正则  
+4. 字符串API `charCodeAt`返回的unicode编码，通过toString(16)转成16进制，利用正则  
 `/\u(00)“转换后的16位编码”/`可精确匹配。
 
-4. 关于浮点数的运算误差
+5. 关于浮点数的运算误差
 所有的支持二进制浮点数运算（绝大部分都是 IEEE 754[1] 的实现）都存在浮点数的运算误差。
 	
 	```javascript
@@ -32,7 +34,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	(0.2 * 0.1).toFixed(1)  // 0.2
 	```
 
-5. 关于Ajax回调函数执行window.open等打开新窗口方法浏览器不支持解决方案。
+6. 关于Ajax回调函数执行window.open等打开新窗口方法浏览器不支持解决方案。
 	
 	```javascript
 	// 执行ajax时关闭异步，也就是把asnyc属性设置为false即可解决
@@ -42,7 +44,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	});
 	```
 
-6. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
+7. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
 	```javascript
 	function unique (arr) {
@@ -61,7 +63,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
   	}
 	```
 
-7. js获取当前url参数值接口
+8. js获取当前url参数值接口
 
 	```javascript
 	function getQueryString (name) {
@@ -76,7 +78,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	}
 	```
 
-8. JSONP跨域原理解析
+9. JSONP跨域原理解析
 	
 	```javascript
 	原理：利用在页面中创建<script>节点的方法向不同域提交HTTP请求并且可在url中指定回调函数，  
@@ -85,7 +87,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	缺点：如果返回的数据格式有问题或返回失败了，并不会报错。而且只支持GET而不支持POST等其它类型的HTTP请求。
 	```
 
-9. 也是YY一道面试题，考察this作用域。
+10. 也是YY一道面试题，考察this作用域。
 	
 	```javascript
 	var foo = {
@@ -103,7 +105,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-10. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
+11. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
 	
 	```javascript
 	/* 
@@ -128,7 +130,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-11. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
+12. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
 
 	```javascript
 	var b = 10;  
@@ -151,7 +153,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-12. 了解变量声明提升和上下文对象。
+13. 了解变量声明提升和上下文对象。
 	
 	```javascript
 	var a = 10;  
@@ -172,7 +174,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-13. JavaScript replace(RegExp, Function)解析
+14. JavaScript replace(RegExp, Function)解析
 	
 	template引擎的实现原理是通过正则匹配目标字串，replace传匿名函数对即将替换目标文本的字符串进行操作，想要了解template实现原理，我们要先了解replace的高级用法和实现原理。
 	```javascript
@@ -257,7 +259,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
      */
 	```
 
-14. 简单template实现原理。
+15. 简单template实现原理。
 
 	模板写法:
 	```javascript
@@ -272,7 +274,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	* 遇到`interpolate`(即`<%= %>`)，将其中的内容当成变量拼接在字符串中。
 	* 遇到`evaluate`(即`<% %>`)，直接当成代码。
 
-15. 货币快速换算
+16. 货币快速换算
 	
 	```javascript
 	var s = '1234567.89';
