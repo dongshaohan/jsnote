@@ -310,4 +310,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 	转数字用+
 	var a = +'1234'; // 1234
+
+	合并数组
+	var a = [1,2,3];
+	var b = [4,5,6];
+	Array.prototype.push.apply(a, b);
+	console.log(a); // [1,2,3,4,5,6]
 	```
