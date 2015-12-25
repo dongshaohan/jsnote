@@ -285,7 +285,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 17. 奇淫技巧
 
 	```javascript
-	向下取整 Math.floor(n)，可以用~~，也可以用右移符>>。
+	向下取整Math.floor，可以用~~，也可以用右移符>>代替。
 	var a = ~~1.2; // 1 （建议使用，比Math.floor快4倍左右）
 	var a = 1.2>>0; // 1
 	/* 但是两者最好都只用在正整数上，因为只是舍掉了小数部分。Math.floor(-1.2)应该为-2，这两种方法的结果为-1 */
