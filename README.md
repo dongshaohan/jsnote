@@ -326,4 +326,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 	判断IE:
 	var ie = /*@cc_on !@*/false;
+
+	运算符-->叫做趋向于，可以声明一个变量 然后让他 趋向于 另一个数。
+	var x = 10; while (x --> 0)console.log(x); 
+	// 9,8,7,6,5,4,3,2,1,0
 	```
