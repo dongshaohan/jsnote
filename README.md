@@ -316,4 +316,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	var b = [4,5,6];
 	Array.prototype.push.apply(a, b);
 	console.log(a); // [1,2,3,4,5,6]
+
+	快速取数组最大和最小值
+	Math.max.apply(Math, [1,2,3]); // 3
+	Math.min.apply(Math, [1,2,3]); // 1
 	```
