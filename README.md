@@ -332,7 +332,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	// 9,8,7,6,5,4,3,2,1,0
 	```
 
-19. <a href="" onclick="runJsCode();"></a> `#` or `javascript:void(0)`
+19. `<a href="" onclick="runJsCode();"></a>`  `#` or `javascript:void(0)`
 
 	```javascript
 	```
