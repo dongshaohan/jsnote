@@ -332,4 +332,15 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	// 9,8,7,6,5,4,3,2,1,0
 	```
 
-19. 高效复制对象（What is the most efficient way to clone an object?）
+19. 高效复制对象
+	
+	```javascript
+	// 浅复制
+	var newObject = jQuery.extend({}, oldObject);
+
+	// 深复制 较慢
+	var newObject = jQuery.extend(true, {}, oldObject);
+
+	// 比深复制快10% - 20% 但对Date对象不适用
+	var newObject = JSON.parse(JSON.stringify(obj));
+	```
