@@ -344,3 +344,4 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	// 比深复制快10% - 20% 但对Date对象不适用
 	var newObject = JSON.parse(JSON.stringify(obj));
 	```
+	
