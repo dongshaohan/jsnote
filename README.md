@@ -346,3 +346,22 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	var newObject = JSON.parse(JSON.stringify(obj));
 	```
 	
+20. 一道javascript笔试题
+	
+	```javascript
+	var x = 20;
+	var temp = {
+	    x: 40,
+	    foo: function () {
+	        var x = 10;
+	        return this.x;
+	    }
+	};
+
+	console.log( temp.foo() ); // 40
+	console.log( (temp.foo)() ); // 40
+	console.log( (temp.foo = temp.foo)() ); // 20
+	console.log( (temp.foo, temp.foo)() ); // 20
+	console.log( temp.foo.apply(window) ); // 20
+	console.log( temp.foo.apply(temp) ); // 40
+	```
