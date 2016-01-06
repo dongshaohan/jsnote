@@ -358,10 +358,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	    }
 	};
 
-	console.log( temp.foo() ); // 40
-	console.log( (temp.foo)() ); // 40
+	console.log( temp.foo() );  			// 40
+	console.log( (temp.foo)() ); 			// 40
 	console.log( (temp.foo = temp.foo)() ); // 20
-	console.log( (temp.foo, temp.foo)() ); // 20
-	console.log( temp.foo.apply(window) ); // 20
-	console.log( temp.foo.apply(temp) ); // 40
+	console.log( (temp.foo, temp.foo)() );	// 20
+	console.log( temp.foo.apply(window) );  // 20
+	console.log( temp.foo.apply(temp) ); 	// 40
 	```
