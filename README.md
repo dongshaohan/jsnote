@@ -398,4 +398,12 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	*/
 
 	4.启用Gzip压缩页面元素
+	/*
+	通过压缩HTTP响应内容可减少页面响应时间。从HTTP/1.1开始，web客户端在HTTP请求中通过Accept-Encoding头来表明支持的压缩类型，
+	如：Accept-Encoding: gzip, deflate.
+	如果Web server检查到Accept-Encoding头，它会使用客户端支持的方法来压缩HTTP响应，会设置Content-Encoding头，如：Content-Encoding: gzip。
+	Gzip是目前最流行及有效的压缩方法。其他的方式如deflate，但它效果较差，也不够流行。通过Gzip，内容一般可减少70%。
+	Gzip的思想就是把文件先在服务器端进行压缩，然后再传输。这样可以显著减少文件传输的大小。
+	传输完毕后浏览器会重新对压缩过的内容进行解压缩，并执行。目前的浏览器都能“良好”地支持gzip
+	*/
 	```
