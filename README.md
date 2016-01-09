@@ -437,9 +437,6 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	12.移除重复的脚本
 
 	13.配置ETags
-	
-	14.缓存Ajax
-	/*
 
-	*/
+	14.缓存Ajax
 	```
