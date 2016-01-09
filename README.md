@@ -368,6 +368,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 21.YaHoo Web优化的14条原则
 	
+	```javascript
 	1.尽可能的减少HTTP的请求数
 	/*
 	http请求是要开销的，想办法减少请求数自然可以提高网页速度。常用的方法，合并css，js（将一个页面中的css和js文件分别合并）以及 Image maps和css sprites等。
@@ -385,5 +386,14 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	我们还记得80-90%的最终用户响应时间花在下载页面中的各种元素上，如图像文件、样式表、脚本和Flash等。与其花在重构系统这个困难的任务上，还不如先分布静态内容。
 	这不仅能大大减少响应时间，而且由于CDN的存在，分布静态内容非常容易实现。
 	CDN是地理上分布的web server的集合，用于更高效地发布内容。通常基于网络远近来选择给具体用户服务的web server。
-	一些大型网站拥有自己的CDN，但是使用如Akamai Technologies, Mirror Image Internet, 或 Limelight Networks等CDN服务提供商的服务将是划算的。在Yahoo!把静态内容分布到CDN减少了用户影响时间20%或更多。切换到CDN的代码修改工作是很容易的，但能达到提高网站的速度。
+	一些大型网站拥有自己的CDN，但是使用如Akamai Technologies, Mirror Image Internet, 或 LimelightNetworks等CDN服务提供商的服务将是划算的。
+	在Yahoo!把静态内容分布到CDN减少了用户影响时间20%或更多。切换到CDN的代码修改工作是很容易的，但能达到提高网站的速度。
 	*/
+
+	3.增加Expires Header
+	/*
+	现在越来越多的图片，脚本，css，flash被嵌入到页面中，当我们访问他们的时候势必会做许多次的http请求。其实我们可以通过设置Expires header 来缓存这些文件。
+	Expire其实就是通过header报文来指定特定类型的文件在览器中的缓存时间。大多数的图片，flash在发布后都是不需要经常修改的，
+	做了缓存以后这样浏览器以后就不需要再从服务器下载这些文件而是而直接从缓存中读取，这样再次访问页面的速度会大大加快
+	*/
+	```
