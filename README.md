@@ -368,6 +368,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 21.YaHoo Web优化的14条原则
 1.尽可能的减少HTTP的请求数
+
 	```javascript
 	http请求是要开销的，想办法减少请求数自然可以提高网页速度。常用的方法，合并css，js（将一个页面中的css和js文件分别合并）以及 Image maps和css sprites等。
 	当然或许将css，js文件拆分多个是因为css结构，共用等方面的考虑。阿里巴巴中文站当时的做法是开发时依然分开开发，然后在后台 对js，css进行合并，
@@ -377,6 +378,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	```
 
 2.使用CDN（内容分发网络）
+
 	```javascript
 	用户离web server的远近对响应时间也有很大影响。从用户角度看，把内容部署到多个地理位置分散的服务器上将有效提高页面装载速度。但是该从哪里开始呢？
 	作为实现内容地理分布的第一步，不要试图重构web应用以适应分布架构。改变架构将导致多个周期性任务，如同步session状态，在多个server之间复制数据库交易。
