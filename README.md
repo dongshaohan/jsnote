@@ -440,3 +440,9 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 	14.缓存Ajax
 	```
+
+22. IE专属
+	
+	```javascript
+	var msie = document.documentMode; // documentMode is an IE-only property
+	```
