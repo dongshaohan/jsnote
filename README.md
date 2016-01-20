@@ -366,7 +366,13 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	console.log( temp.foo.apply(temp) ); 	// 40
 	```
 
-21. YaHoo Web优化的14条原则
+21. IE专属
+	
+	```javascript
+	var msie = document.documentMode; // documentMode is an IE-only property
+	```
+
+22. YaHoo Web优化的14条原则
 	
 	```javascript
 	1.尽可能的减少HTTP的请求数
@@ -439,10 +445,4 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	13.配置ETags
 
 	14.缓存Ajax
-	```
-
-22. IE专属
-	
-	```javascript
-	var msie = document.documentMode; // documentMode is an IE-only property
 	```
