@@ -378,7 +378,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	console.log(s.pro + s); 
 
 	// NaN undefinedhello
-	// 给基本类型数据加属性不报错，但是引用的话返回undefined，10+undefined返回NaN，而undefined和string相加时转变成了字符串。
+	// 给基本类型数据加属性不报错，但是引用的话返回undefined，10+undefined返回NaN，
+	// 而undefined和string相加时转变成了字符串。
 	```
 
 22. IE专属
