@@ -377,7 +377,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	s.pro = 'world'; 
 	console.log(s.pro + s); 
 
-	// NaN undefinedhello
+	// 答案: NaN undefinedhello
 	// 给基本类型数据加属性不报错，但是引用的话返回undefined，10+undefined返回NaN，
 	// 而undefined和string相加时转变成了字符串。
 	```
@@ -386,12 +386,13 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 	```javascript
 	console.log(typeof fn); 
-	function fn() {}; 
+	function fn () {}; 
 	var fn; 
 
-	// function
+	// 答案: function
 	// 因为函数声明优于变量声明。
-	// 我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，这里的优于可以理解为晚于变量声明后，
+	// 我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，
+	// 这里的优于可以理解为晚于变量声明后，
 	// 如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。
 	```
 
