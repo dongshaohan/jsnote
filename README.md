@@ -382,13 +382,26 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	// 而undefined和string相加时转变成了字符串。
 	```
 
-22. IE专属
+22. 函数声明优于变量声明 
+
+	```javascript
+	console.log(typeof fn); 
+	function fn() {}; 
+	var fn; 
+
+	// function
+	// 因为函数声明优于变量声明。
+	// 我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，这里的优于可以理解为晚于变量声明后，
+	// 如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。
+	```
+
+23. IE专属
 	
 	```javascript
 	var msie = document.documentMode; // documentMode is an IE-only property
 	```
 
-23. YaHoo Web优化的14条原则
+24. YaHoo Web优化的14条原则
 	
 	```javascript
 	1.尽可能的减少HTTP的请求数
