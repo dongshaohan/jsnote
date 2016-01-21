@@ -144,6 +144,17 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 * 这个知识点主要用到，在JavaScript中，打印和相加计算，会分别调用toString或valueOf函数，
 	 * 所以我们可以重写all的toString或valueOf方法，使其返回sum的值。
 	 */
+
+	/*
+	 * 另外飘逸的写法
+	 */
+	function add (num) { 
+	  	num += ~~add; 
+	  	add.num = num; 
+	  	return add; 
+	} 
+	add.valueOf = add.toString = function () { return add.num }; 
+	alert( add(3)(4)(5)(6) ); // 18
 	```
 
 13. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
@@ -377,9 +388,11 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	s.pro = 'world'; 
 	console.log(s.pro + s); 
 
-	// 答案: NaN undefinedhello
-	// 给基本类型数据加属性不报错，但是引用的话返回undefined，10+undefined返回NaN，
-	// 而undefined和string相加时转变成了字符串。
+	/*
+	 * 答案: NaN undefinedhello
+	 * 给基本类型数据加属性不报错，但是引用的话返回undefined，10+undefined返回NaN，
+	 * 而undefined和string相加时转变成了字符串。
+	 */
 	```
 
 22. 函数声明优于变量声明 
@@ -389,11 +402,13 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	function fn () {}; 
 	var fn; 
 
-	// 答案: function
-	// 因为函数声明优于变量声明。
-	// 我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，
-	// 这里的优于可以理解为晚于变量声明后，
-	// 如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。
+	/*
+	 * 答案: function
+	 * 因为函数声明优于变量声明。
+	 * 我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，
+	 * 这里的优于可以理解为晚于变量声明后，
+	 * 如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。
+	 */
 	```
 
 23. IE专属
