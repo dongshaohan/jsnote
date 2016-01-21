@@ -79,7 +79,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
   	}
 	```
 
-9. js获取当前url参数值接口
+9. YY笔试题，js获取当前url参数值接口
 
 	```javascript
 	function getQueryString (name) {
@@ -357,7 +357,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	var newObject = JSON.parse(JSON.stringify(obj));
 	```
 	
-20. 一道javascript笔试题
+20. 37互娱一道印象比较深的javascript笔试题
 	
 	```javascript
 	var x = 20;
