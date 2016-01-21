@@ -366,13 +366,28 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	console.log( temp.foo.apply(temp) ); 	// 40
 	```
 
-21. IE专属
+21. 一道javascript笔试题
+	
+	```javascript
+	var a = 10; 
+	a.pro = 10; 
+	console.log(a.pro + a); 
+	 
+	var s = 'hello'; 
+	s.pro = 'world'; 
+	console.log(s.pro + s); 
+
+	// NaN undefinedhello
+	// 给基本类型数据加属性不报错，但是引用的话返回undefined，10+undefined返回NaN，而undefined和string相加时转变成了字符串。
+	```
+
+22. IE专属
 	
 	```javascript
 	var msie = document.documentMode; // documentMode is an IE-only property
 	```
 
-22. YaHoo Web优化的14条原则
+23. YaHoo Web优化的14条原则
 	
 	```javascript
 	1.尽可能的减少HTTP的请求数
