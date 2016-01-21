@@ -371,7 +371,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 	console.log( temp.foo() );  			// 40 this对象为temp，this.x等于temp.x
 	console.log( (temp.foo)() ); 			// 40 等价于第一个temp.foo()
-	console.log( (temp.foo = temp.foo)() ); // 20 等于IIFE立执行函数，非严格模式下this指向window，故this.x等于window.x
+	console.log( (temp.foo = temp.foo)() ); // 20 涉及到运算符使转换成匿名函数，等于IIFE立执行函数，非严格模式下this指向window，故this.x等于window.x
 	console.log( (temp.foo, temp.foo)() );	// 20 同上
 	console.log( temp.foo.apply(window) );  // 20 apply使temp.foo的this对象为window上下文，this.x等于window.x
 	console.log( temp.foo.apply(temp) ); 	// 40 apply使temp.foo的this对象指向temp上下文，this.x等于temp.x
