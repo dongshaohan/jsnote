@@ -395,7 +395,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-22.
+22. 考察arguments
 
 	```javascript
 	var length = 10;
