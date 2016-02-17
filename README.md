@@ -395,7 +395,30 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-22. 函数声明优于变量声明 
+22.
+
+	```javascript
+	var length = 10;
+	function fn () {
+	    alert(this.length);
+	}
+	var obj = {
+	    length: 5,
+	    method: function (fn) {
+	        fn();
+	        arguments[0]();
+	    }
+	}
+	obj.method(fn);
+
+	/*
+	 * 答案: 10 1
+	 * 这里的坑主要是arguments，我们知道取对象属于除了点操作符还可以用中括号，这里fn的scope是arguments，
+	 * 即fn内的this===arguments，调用时仅传了一个参数fn，因此length为1。
+	 */
+	```
+
+23. 函数声明优于变量声明 
 
 	```javascript
 	console.log(typeof fn); 
@@ -411,13 +434,13 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-23. IE专属
+24. IE专属
 	
 	```javascript
 	var msie = document.documentMode; // documentMode is an IE-only property
 	```
 
-24. YaHoo Web优化的14条原则
+25. YaHoo Web优化的14条原则
 	
 	```javascript
 	1.尽可能的减少HTTP的请求数
