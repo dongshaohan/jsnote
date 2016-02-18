@@ -6,7 +6,13 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 2. underfined、null、0、false、NaN、空字符串的逻辑结果均为false
 
-3. 数组传递和复制
+3. IE专属
+	
+	```javascript
+	var msie = document.documentMode; // documentMode is an IE-only property
+	```
+
+4. 数组传递和复制
 	
 	```javascript
 	ar a = [1,2,3];
@@ -21,17 +27,17 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	console.log(b); // [4, undefined, 6]
 	```
 
-4. 关于length
+5. 关于length
 	1. 字符串的length值等于字符串个数.
 	* 数组的length值等于数组长度.
 	* 函数的length值等于形参个数.
 	* arguments的length值等于实参个数.
 	* object对象无length值.
 
-5. 字符串API `charCodeAt`返回的unicode编码，通过toString(16)转成16进制，利用正则  
+6. 字符串API `charCodeAt`返回的unicode编码，通过toString(16)转成16进制，利用正则  
 `/\u(00)“转换后的16位编码”/`可精确匹配。
 
-6. 关于浮点数的运算误差
+7. 关于浮点数的运算误差
 所有的支持二进制浮点数运算（绝大部分都是 IEEE 754[1] 的实现）都存在浮点数的运算误差。
 	
 	```javascript
@@ -50,7 +56,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	(0.2 * 0.1).toFixed(1)  // 0.2
 	```
 
-7. 关于Ajax回调函数执行window.open等打开新窗口方法浏览器不支持解决方案。
+8. 关于Ajax回调函数执行window.open等打开新窗口方法浏览器不支持解决方案。
 	
 	```javascript
 	// 执行ajax时关闭异步，也就是把asnyc属性设置为false即可解决
@@ -60,7 +66,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	});
 	```
 
-8. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
+9. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
 	```javascript
 	function unique (arr) {
@@ -79,7 +85,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
   	}
 	```
 
-9. YY笔试题，js获取当前url参数值接口
+10. YY笔试题，js获取当前url参数值接口
 
 	```javascript
 	function getQueryString (name) {
@@ -94,7 +100,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	}
 	```
 
-10. JSONP跨域原理解析
+11. JSONP跨域原理解析
 	
 	```javascript
 	原理：利用在页面中创建<script>节点的方法向不同域提交HTTP请求并且可在url中指定回调函数，  
@@ -103,7 +109,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	缺点：如果返回的数据格式有问题或返回失败了，并不会报错。而且只支持GET而不支持POST等其它类型的HTTP请求。
 	```
 
-11. 也是YY一道面试题，考察this作用域。
+12. 也是YY一道面试题，考察this作用域。
 	
 	```javascript
 	var foo = {
@@ -121,7 +127,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-12. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
+13. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
 	
 	```javascript
 	/* 
@@ -157,7 +163,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	alert( add(3)(4)(5)(6) ); // 18
 	```
 
-13. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
+14. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
 
 	```javascript
 	var b = 10;  
@@ -180,7 +186,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-14. 了解变量声明提升和上下文对象。
+15. 了解变量声明提升和上下文对象。
 	
 	```javascript
 	var a = 10;  
@@ -201,7 +207,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-15. JavaScript replace(RegExp, Function)解析
+16. JavaScript replace(RegExp, Function)解析
 	
 	template引擎的实现原理是通过正则匹配目标字串，replace传匿名函数对即将替换目标文本的字符串进行操作，想要了解template实现原理，我们要先了解replace的高级用法和实现原理。
 	```javascript
@@ -286,7 +292,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
      */
 	```
 
-16. 简单template实现原理。
+17. 简单template实现原理。
 
 	模板写法:
 	```javascript
@@ -301,7 +307,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	* 遇到`interpolate`(即`<%= %>`)，将其中的内容当成变量拼接在字符串中。
 	* 遇到`evaluate`(即`<% %>`)，直接当成代码。
 
-17. 货币快速换算
+18. 货币快速换算
 	
 	```javascript
 	var s = '1234567.89';
@@ -309,7 +315,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	s.replace(/(\d)(?=(?:\d{3})+(?:\.|$))/g, '$1,'); // 1,234,567.89
 	```
 
-18. 奇淫技巧
+19. 奇淫技巧
 
 	```javascript
 	向下取整Math.floor，可以用|0，可以用~~，也可以用右移符>>代替。
@@ -344,7 +350,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	// 9,8,7,6,5,4,3,2,1,0
 	```
 
-19. 高效复制对象
+20. 高效复制对象
 	
 	```javascript
 	// 浅复制
@@ -357,7 +363,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	var newObject = JSON.parse(JSON.stringify(obj));
 	```
 	
-20. 37互娱一道印象比较深的javascript笔试题
+21. 37互娱一道印象比较深的javascript笔试题
 	
 	```javascript
 	var x = 20;
@@ -377,7 +383,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	console.log( temp.foo.apply(temp) ); 	// 40 apply使temp.foo的this对象指向temp上下文，this.x等于temp.x
 	```
 
-21. 一道javascript笔试题
+22. 一道javascript笔试题
 	
 	```javascript
 	var a = 10; 
@@ -395,7 +401,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-22. 考察arguments
+23. 考察arguments
 
 	```javascript
 	var length = 10;
@@ -418,7 +424,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-23. 函数声明优于变量声明 
+24. 函数声明优于变量声明 
 
 	```javascript
 	console.log(typeof fn); 
@@ -432,12 +438,6 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 * 这里的优于可以理解为晚于变量声明后，
 	 * 如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。
 	 */
-	```
-
-24. IE专属
-	
-	```javascript
-	var msie = document.documentMode; // documentMode is an IE-only property
 	```
 
 25. YaHoo Web优化的14条原则
