@@ -439,9 +439,11 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-25. YaHoo Web优化的14条原则
+25. 提高web性能方法
 	
 	```javascript
+	一、YaHoo Web优化的14条原则
+
 	1.尽可能的减少HTTP的请求数
 	/*
 	http请求是要开销的，想办法减少请求数自然可以提高网页速度。常用的方法，合并css，js（将一个页面中的css和js文件分别合并）以及 Image maps和css sprites等。
@@ -512,4 +514,12 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	13.配置ETags
 
 	14.缓存Ajax
+	```
+
+26. 提高前端工作效率的工具和方法
+
+	```javascript
+	1.做好时间管理，要有工作紧急优先级
+
+	2.用好工具
 	```
