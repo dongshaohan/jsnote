@@ -1,7 +1,8 @@
 <a name="top"/>
 ## 前端笔记
 * [Javascript细节](#js)
-* [常见笔试题](#written)
+* [奇淫技巧](#skill)
+* [常见面试题](#written)
 * [前端模块化](#module) 
 * [web性能优化](#optimize)
 * [提高工作效率](#product) 
@@ -77,7 +78,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	});
 	```
 
-9. JSONP跨域原理解析
+9. JSONP跨域原理解析（面试常问）
 	
 	```javascript
 	原理：利用在页面中创建<script>节点的方法向不同域提交HTTP请求并且可在url中指定回调函数，  
@@ -86,141 +87,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	缺点：如果返回的数据格式有问题或返回失败了，并不会报错。而且只支持GET而不支持POST等其它类型的HTTP请求。
 	```
 
-###常见笔试题<a name="written"/> [回到顶部](#top)
-===========
-9. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
-
-	```javascript
-	function unique (arr) {
-		var ret = []
-		var hash = {}
-
-		for ( var i = 0, len = arr.length; i < len; i++ ) {
-			var elem = arr[i];
-    		
-    		if ( !hash[elem] ) {
-      			ret.push(elem);
-  				hash[elem] = true;
-    		}
-  		}
-  		return ret
-  	}
-	```
-
-10. YY笔试题，js获取当前url参数值接口
-
-	```javascript
-	function getQueryString (name) {
-	    var reg = new RegExp( "(^|&)"+ name +"=([^&]*)(&|$)", "i" );
-	    var url = window.location.search; // 得到当前url的查询字串(?以及后面的字段)
-	    var ret = url.substr(1).match(reg); // reg没有全局标志，所以ret[0]是完整的匹配，arr[1]是第一个括号里捕获的字串，依此类推。
-
-	    if ( ret ) 
-	   		return unescape(ret[2]); // ret[2]保存的是reg第二个括号捕获的字串，unescape用来解码url中的字符。
-	   	else 
-	   		return null;
-	}
-	```
-
-12. 也是YY一道面试题，考察this作用域。
-	
-	```javascript
-	var foo = {
-		bar: '你好',
-		func: function () {
-			alert(this.bar);
-		}
-	},
-	bar = foo.func;
-	bar();
-	/* 
-	 * 答案：function () { alert(this.bar) }
-	 * 把foo.func函数赋值给全局变量bar然后执行，这等价于执行全局函数。全局函数的this是指向window的，
-	 * 所以alert(this.bar)等于alert(window.bar)，也就是alert函数自身。
-	 */
-	```
-
-13. 定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
-	
-	```javascript
-	/* 
-	 * 这实际上就是 currying（柯里化），也就是把一个多变量的函数变成一系列单变量的函数。
-	 * 每个函数接收一个参数，然后返回一个接收余下参数并返回结果的新函数。
-	 * 这个过程中利用了闭包（closure）。也就是说，这种情况下，是一个函数返回另一个函数。
-	 */
-	function add (x) {
-	    var sum = x;
-	    var all = function (y) {
-	        sum = i + y;
-	        return all;
-	    };
-	    all.toString = all.valueOf = function () {
-	        return sum;
-	    };
-	    return all;
-	}
-	/* 
-	 * 这个知识点主要用到，在JavaScript中，打印和相加计算，会分别调用toString或valueOf函数，
-	 * 所以我们可以重写all的toString或valueOf方法，使其返回sum的值。
-	 */
-
-	/*
-	 * 另外飘逸的写法
-	 */
-	function add (num) { 
-	  	num += ~~add; 
-	  	add.num = num; 
-	  	return add; 
-	} 
-	add.valueOf = add.toString = function () { return add.num }; 
-	alert( add(3)(4)(5)(6) ); // 18
-	```
-
-14. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
-
-	```javascript
-	var b = 10;  
-	function a (c) {  
-		alert(b);
-	    var b = 100;  
-	    alert(b);  
-	    anguments[0] = 2; 
-	    alert(c);  
-	}  
-	a(3);
-	alert(b);
-
-	/* 
-	 * 答案：underfined 100 2 10
-	 * 1、a作用域内，js引擎会先查找所有声明的变量并赋值underfined，b已经声明，但此时还未赋值，所以b的值还是underfined。
-	 * 2、b已经赋值100，alert结果100。
-	 * 3、c传进去时是3，但c = anguments[0] = 2，即此时c等于2。
-	 * 4、当前环境是全局作用域下，变量b在该环境下的值为10，故alert的结果为10。
-	 */
-	```
-
-15. 了解变量声明提升和上下文对象。
-	
-	```javascript
-	var a = 10;  
-	function test () {  
-	    a = 100;  
-	    alert(a);  
-	    alert(this.a);  
-	    var a;  
-	    alert(a);  
-	}  
-	test();  
-
-	/* 
-	 * 答案：100 10 100
-	 * 1、test作用域内，var a由于变量声明提升，a ＝ 100并不是重置全局变量a，而是对当前作用域下a的赋值，所以alert的结果为100。
-	 * 2、全局函数的this对指向window对象，所以this.a等于window.a，故alert的结果为10。
-	 * 3、由于变量声明提升和赋值，此时的a还是100。
-	 */
-	```
-
-16. JavaScript replace(RegExp, Function)解析
+10. JavaScript replace(RegExp, Function)解析
 	
 	template引擎的实现原理是通过正则匹配目标字串，replace传匿名函数对即将替换目标文本的字符串进行操作，想要了解template实现原理，我们要先了解replace的高级用法和实现原理。
 	```javascript
@@ -305,7 +172,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
      */
 	```
 
-17. 简单template实现原理。
+11. 简单template实现原理。
 
 	模板写法:
 	```javascript
@@ -320,7 +187,57 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	* 遇到`interpolate`(即`<%= %>`)，将其中的内容当成变量拼接在字符串中。
 	* 遇到`evaluate`(即`<% %>`)，直接当成代码。
 
-18. 货币快速换算
+
+###奇淫技巧<a name="skill"/> [回到顶部](#top)
+===========
+1. 向下取整
+
+	```javascript
+	正常Math.floor，可以用|0，可以用~~，也可以用右移符>>代替。
+	var a= 1.2|0; // 1
+	var a = ~~1.2; // 1 （比Math.floor快4倍左右）
+	var a = 1.2>>0; // 1
+	/* 但是两者最好都只用在正整数上，因为只是舍掉了小数部分。Math.floor(-1.2)应该为-2，这两种方法的结果为-1 */
+	```
+
+2. 用( new Function(stringCode) )()比eval快50倍。
+
+3. 转数字用+
+	
+	```javascript
+	var a = +'1234'; // 1234
+	```
+
+4. 合并数组
+	
+	```javascript
+	var a = [1,2,3];
+	var b = [4,5,6];
+	Array.prototype.push.apply(a, b);
+	console.log(a); // [1,2,3,4,5,6]
+	```
+
+5. 交换值
+	
+	```javascript
+	a = [b, b=a][0];
+	```
+
+6. 快速取数组最大和最小值
+
+	```javascript
+	Math.max.apply(Math, [1,2,3]); // 3
+	Math.min.apply(Math, [1,2,3]); // 1
+	```
+
+7. 运算符-->叫做趋向于，可以声明一个变量 然后让他 趋向于 另一个数。
+
+	```javascript
+	var x = 10; while (x --> 0)console.log(x); 
+	// 9,8,7,6,5,4,3,2,1,0
+	```
+
+8. 货币快速换算
 	
 	```javascript
 	var s = '1234567.89';
@@ -328,39 +245,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	s.replace(/(\d)(?=(?:\d{3})+(?:\.|$))/g, '$1,'); // 1,234,567.89
 	```
 
-19. 奇淫技巧
-
-	```javascript
-	向下取整Math.floor，可以用|0，可以用~~，也可以用右移符>>代替。
-	var a= 1.2|0; // 1
-	var a = ~~1.2; // 1 （比Math.floor快4倍左右）
-	var a = 1.2>>0; // 1
-	/* 但是两者最好都只用在正整数上，因为只是舍掉了小数部分。Math.floor(-1.2)应该为-2，这两种方法的结果为-1 */
-
-	用( new Function(stringCode) )()比eval快50倍。
-
-	转数字用+
-	var a = +'1234'; // 1234
-
-	合并数组
-	var a = [1,2,3];
-	var b = [4,5,6];
-	Array.prototype.push.apply(a, b);
-	console.log(a); // [1,2,3,4,5,6]
-
-	交换值
-	a = [b, b=a][0];
-
-	快速取数组最大和最小值
-	Math.max.apply(Math, [1,2,3]); // 3
-	Math.min.apply(Math, [1,2,3]); // 1
-
-	运算符-->叫做趋向于，可以声明一个变量 然后让他 趋向于 另一个数。
-	var x = 10; while (x --> 0)console.log(x); 
-	// 9,8,7,6,5,4,3,2,1,0
-	```
-
-20. 高效复制对象
+9. 高效复制对象
 	
 	```javascript
 	// 浅复制
@@ -373,7 +258,141 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	var newObject = JSON.parse(JSON.stringify(obj));
 	```
 	
-21. 37互娱一道印象比较深的javascript笔试题
+###常见笔试题<a name="written"/> [回到顶部](#top)
+===========
+1. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
+
+	```javascript
+	function unique (arr) {
+		var ret = []
+		var hash = {}
+
+		for ( var i = 0, len = arr.length; i < len; i++ ) {
+			var elem = arr[i];
+    		
+    		if ( !hash[elem] ) {
+      			ret.push(elem);
+  				hash[elem] = true;
+    		}
+  		}
+  		return ret
+  	}
+	```
+
+2. YY笔试题，js获取当前url参数值接口
+
+	```javascript
+	function getQueryString (name) {
+	    var reg = new RegExp( "(^|&)"+ name +"=([^&]*)(&|$)", "i" );
+	    var url = window.location.search; // 得到当前url的查询字串(?以及后面的字段)
+	    var ret = url.substr(1).match(reg); // reg没有全局标志，所以ret[0]是完整的匹配，arr[1]是第一个括号里捕获的字串，依此类推。
+
+	    if ( ret ) 
+	   		return unescape(ret[2]); // ret[2]保存的是reg第二个括号捕获的字串，unescape用来解码url中的字符。
+	   	else 
+	   		return null;
+	}
+	```
+
+3. 也是YY一道面试题，考察this作用域。
+	
+	```javascript
+	var foo = {
+		bar: '你好',
+		func: function () {
+			alert(this.bar);
+		}
+	},
+	bar = foo.func;
+	bar();
+	/* 
+	 * 答案：function () { alert(this.bar) }
+	 * 把foo.func函数赋值给全局变量bar然后执行，这等价于执行全局函数。全局函数的this是指向window的，
+	 * 所以alert(this.bar)等于alert(window.bar)，也就是alert函数自身。
+	 */
+	```
+
+4. YY笔试题，定义一个函数function add (x) { }，实现alert( add(2)(3)(4) )的结果能够等于9，且可复用。
+	
+	```javascript
+	/* 
+	 * 这实际上就是 currying（柯里化），也就是把一个多变量的函数变成一系列单变量的函数。
+	 * 每个函数接收一个参数，然后返回一个接收余下参数并返回结果的新函数。
+	 * 这个过程中利用了闭包（closure）。也就是说，这种情况下，是一个函数返回另一个函数。
+	 */
+	function add (x) {
+	    var sum = x;
+	    var all = function (y) {
+	        sum = i + y;
+	        return all;
+	    };
+	    all.toString = all.valueOf = function () {
+	        return sum;
+	    };
+	    return all;
+	}
+	/* 
+	 * 这个知识点主要用到，在JavaScript中，打印和相加计算，会分别调用toString或valueOf函数，
+	 * 所以我们可以重写all的toString或valueOf方法，使其返回sum的值。
+	 */
+
+	/*
+	 * 另外飘逸的写法
+	 */
+	function add (num) { 
+	  	num += ~~add; 
+	  	add.num = num; 
+	  	return add; 
+	} 
+	add.valueOf = add.toString = function () { return add.num }; 
+	alert( add(3)(4)(5)(6) ); // 18
+	```
+
+5. 下面这道题，同样是在面试YY时遇到，主要考察作用域、变量声明、anguments。
+
+	```javascript
+	var b = 10;  
+	function a (c) {  
+		alert(b);
+	    var b = 100;  
+	    alert(b);  
+	    anguments[0] = 2; 
+	    alert(c);  
+	}  
+	a(3);
+	alert(b);
+
+	/* 
+	 * 答案：underfined 100 2 10
+	 * 1、a作用域内，js引擎会先查找所有声明的变量并赋值underfined，b已经声明，但此时还未赋值，所以b的值还是underfined。
+	 * 2、b已经赋值100，alert结果100。
+	 * 3、c传进去时是3，但c = anguments[0] = 2，即此时c等于2。
+	 * 4、当前环境是全局作用域下，变量b在该环境下的值为10，故alert的结果为10。
+	 */
+	```
+
+6. 了解变量声明提升和上下文对象。
+	
+	```javascript
+	var a = 10;  
+	function test () {  
+	    a = 100;  
+	    alert(a);  
+	    alert(this.a);  
+	    var a;  
+	    alert(a);  
+	}  
+	test();  
+
+	/* 
+	 * 答案：100 10 100
+	 * 1、test作用域内，var a由于变量声明提升，a ＝ 100并不是重置全局变量a，而是对当前作用域下a的赋值，所以alert的结果为100。
+	 * 2、全局函数的this对指向window对象，所以this.a等于window.a，故alert的结果为10。
+	 * 3、由于变量声明提升和赋值，此时的a还是100。
+	 */
+	```
+
+7. 37互娱一道印象比较深的javascript笔试题
 	
 	```javascript
 	var x = 20;
@@ -393,7 +412,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	console.log( temp.foo.apply(temp) ); 	// 40 apply使temp.foo的this对象指向temp上下文，this.x等于temp.x
 	```
 
-22. 一道javascript笔试题
+8. 一道javascript笔试题
 	
 	```javascript
 	var a = 10; 
@@ -411,7 +430,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-23. 考察arguments
+9. 考察arguments
 
 	```javascript
 	var length = 10;
@@ -434,7 +453,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-24. 函数声明优于变量声明 
+10. 函数声明优于变量声明 
 
 	```javascript
 	console.log(typeof fn); 
@@ -450,7 +469,9 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-25. AMD和CMD的区别有哪些
+###前端模块化<a name="skill"/> [回到顶部](#top)
+============
+1. AMD和CMD的区别（面试常问）
 
 	```javascript
 	1. 对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。
@@ -482,11 +503,11 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	CMD 里，每个 API 都简单纯粹。
 	```
 
-26. 提高web性能方法(不断补充中...)
-	
-	```javascript
-	一、YaHoo Web优化的14条原则
+###前端模块化<a name="optimize"/> [回到顶部](#top)
+============
+1. YaHoo Web优化的14条原则
 
+	```javascript
 	1.尽可能的减少HTTP的请求数
 	/*
 	http请求是要开销的，想办法减少请求数自然可以提高网页速度。常用的方法，合并css，js（将一个页面中的css和js文件分别合并）以及 Image maps和css sprites等。
@@ -559,16 +580,19 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	14.缓存Ajax
 	```
 
-27. 提高前端工作效率的方法(不断补充中...)	
+###提高工作效率<a name="product"/> [回到顶部](#top)
+============
+1. 做好时间管理，要有工作紧急优先级
 
 	```javascript
-	一.做好时间管理，要有工作紧急优先级
 	/*
 	1.做好计划。在自己效率高的时候，做一些难的事情；效率低的时候，做一些简单的事。
 	2.一段时间只做一件事情。当一件事做的告一段落，再做另外一件事，而不是穿插着做。比如，写页面时，我会先写 HTML ，再写 CSS ，再切图，再写js
 	*/
-
-	二.用好工具
-	三.经验和阅历
-	四.使用新技术
 	```
+
+2. 用好工具
+
+3. 经验和阅历
+
+4. 使用新技术
