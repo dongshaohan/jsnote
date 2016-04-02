@@ -439,7 +439,33 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-25. 提高web性能方法(不断补充中...)
+25. AMD和CMD的区别有哪些
+
+	```javascript
+	1. 对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。
+	CMD 推崇 as lazy as possible.
+
+	2. CMD 推崇依赖就近，AMD 推崇依赖前置。看代码：
+	// CMD
+	define(function(require, exports, module) {
+	var a = require('./a')
+	a.doSomething()
+	// 此处略去 100 行
+	var b = require('./b') // 依赖可以就近书写
+	b.doSomething()
+	// ... 
+	})
+
+	// AMD 默认推荐的是
+	define(['./a', './b'], function(a, b) { // 依赖必须一开始就写好
+	a.doSomething()
+	// 此处略去 100 行
+	b.doSomething()
+	...
+	}) 
+	```
+
+26. 提高web性能方法(不断补充中...)
 	
 	```javascript
 	一、YaHoo Web优化的14条原则
@@ -516,7 +542,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	14.缓存Ajax
 	```
 
-26. 提高前端工作效率的方法(不断补充中...)
+27. 提高前端工作效率的方法(不断补充中...)
 
 	```javascript
 	一.做好时间管理，要有工作紧急优先级
