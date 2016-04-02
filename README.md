@@ -7,9 +7,8 @@
 * [web性能优化](#optimize)
 * [提高工作效率](#product) 
 
-<br />
 
-####<a name="js">JavaScript细节</a>
+###<a name="js">JavaScript细节</a>
 1. underfined不是关键字，要让一个变量指向未定义或删除该变量，`xxx = underfined`是错误的写法，因为
 underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，
 所以正确写法是使用void 加上任何数字，如`var xxx = void 0`，void加数字结果总是返回underfined。
@@ -191,7 +190,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-####<a name="skill">奇淫技巧</a>
+###<a name="skill">奇淫技巧</a>
 1. 向下取整
 
 	```javascript
@@ -263,7 +262,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-####<a name="written">常见面试题</a>
+###<a name="written">常见面试题</a>
 1. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
 	```javascript
@@ -476,7 +475,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-####<a name="skill">前端模块化</a>
+###<a name="skill">前端模块化</a>
 1. AMD和CMD的区别（面试常问）
 
 	```javascript
@@ -512,7 +511,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-####<a name="optimize">前端模块化</a>
+###<a name="optimize">前端模块化</a>
 1. YaHoo Web优化的14条原则
 
 	```javascript
@@ -591,7 +590,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-####<a name="product">提高工作效率</a>
+###<a name="product">提高工作效率</a>
 1. 做好时间管理，要有工作紧急优先级
 
 	```javascript
