@@ -1,9 +1,13 @@
 <a name="top"/>
 ## 前端笔记
-* [常见笔试题](#written) 
-* [web性能优化](#optimize) 
+* [javascript细节](#js)
+* [前端模块化](#module) 
+* [常见笔试题](#written)
+* [web性能优化](#optimize)
 * [提高工作效率](#product) 
 
+<a name="js"/>###javascript细节 [回到顶部](#top)
+=====
 1. underfined不是关键字，要让一个变量指向未定义或删除该变量，`xxx = underfined`是错误的写法，因为
 underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，
 所以正确写法是使用void 加上任何数字，如`var xxx = void 0`，void加数字结果总是返回underfined。
@@ -553,7 +557,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	14.缓存Ajax
 	```
 
-27. 提高前端工作效率的方法(不断补充中...)	[回到顶部](#top) 
+27. 提高前端工作效率的方法(不断补充中...)	
 
 	```javascript
 	一.做好时间管理，要有工作紧急优先级
