@@ -474,7 +474,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-###<a name="skill">前端模块化</a>
+###<a name="module">前端模块化</a>
 1. AMD和CMD的区别（面试常问）
 
 	```javascript
@@ -510,7 +510,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-###<a name="optimize">前端模块化</a>
+###<a name="optimize">web性能优化</a>
 1. YaHoo Web优化的14条原则
 
 	```javascript
