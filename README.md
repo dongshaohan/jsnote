@@ -8,7 +8,7 @@
 * [提高工作效率](#product) 
 
 
-####javascript细节
+####javascript细节<a name="js"/>
 ===============================================
 1. underfined不是关键字，要让一个变量指向未定义或删除该变量，`xxx = underfined`是错误的写法，因为
 underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，
@@ -188,9 +188,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	* 遇到`interpolate`(即`<%= %>`)，将其中的内容当成变量拼接在字符串中。
 	* 遇到`evaluate`(即`<% %>`)，直接当成代码。
 
+[回到顶部](#top)
 
 
-###奇淫技巧<a name="skill"/> [回到顶部](#top)
+###奇淫技巧<a name="skill"/>
 ===============================================
 1. 向下取整
 
@@ -260,8 +261,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	var newObject = JSON.parse(JSON.stringify(obj));
 	```
 	
+[回到顶部](#top)
 
-####常见面试题<a name="written"/> [回到顶部](#top)
+
+####常见面试题<a name="written"/>
 ===============================================
 1. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
@@ -472,8 +475,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
+[回到顶部](#top)
 
-####前端模块化<a name="skill"/> [回到顶部](#top)
+
+####前端模块化<a name="skill"/>
 ===============================================
 1. AMD和CMD的区别（面试常问）
 
@@ -507,8 +512,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	CMD 里，每个 API 都简单纯粹。
 	```
 
+[回到顶部](#top)
 
-####前端模块化<a name="optimize"/> [回到顶部](#top)
+
+####前端模块化<a name="optimize"/>
 ===============================================
 1. YaHoo Web优化的14条原则
 
@@ -585,7 +592,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	14.缓存Ajax
 	```
 
-###提高工作效率<a name="product"/> [回到顶部](#top)
+[回到顶部](#top)
+
+
+###提高工作效率<a name="product"/>
 ============
 1. 做好时间管理，要有工作紧急优先级
 
@@ -609,3 +619,5 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 3. 经验和阅历
 
 4. 使用新技术
+
+[回到顶部](#top)
