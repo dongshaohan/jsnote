@@ -258,7 +258,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	var newObject = JSON.parse(JSON.stringify(obj));
 	```
 	
-###常见笔试题<a name="written"/> [回到顶部](#top)
+###常见面试题<a name="written"/> [回到顶部](#top)
 ===========
 1. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
@@ -592,6 +592,14 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	```
 
 2. 用好工具
+
+	```javascript
+	/*
+	1. grunt、gulp、webpack、browserify、npm、bower等
+	2. chrome开发者工具、抓包工具、chrome拓展等
+	3. 自动化测试
+	*/
+	```
 
 3. 经验和阅历
 
