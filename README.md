@@ -8,7 +8,7 @@
 * [提高工作效率](#product) 
 
 
-#### javascript细节<a name="js"/>
+<a name="js">javascript细节</a>
 ===============================================
 1. underfined不是关键字，要让一个变量指向未定义或删除该变量，`xxx = underfined`是错误的写法，因为
 underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，
