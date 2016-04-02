@@ -1,13 +1,13 @@
 <a name="top"/>
 ## 前端笔记
 * [Javascript细节](#js)
-* [前端模块化](#module) 
 * [常见笔试题](#written)
+* [前端模块化](#module) 
 * [web性能优化](#optimize)
 * [提高工作效率](#product) 
 
-####javascript细节<a name="js"/> [回到顶部](#top)
-==============================================
+###javascript细节<a name="js"/> [回到顶部](#top)
+===========
 1. underfined不是关键字，要让一个变量指向未定义或删除该变量，`xxx = underfined`是错误的写法，因为
 underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，
 所以正确写法是使用void 加上任何数字，如`var xxx = void 0`，void加数字结果总是返回underfined。
@@ -77,6 +77,17 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	});
 	```
 
+9. JSONP跨域原理解析
+	
+	```javascript
+	原理：利用在页面中创建<script>节点的方法向不同域提交HTTP请求并且可在url中指定回调函数，  
+		  获取json数据并在指定的回调函数中执行。  
+
+	缺点：如果返回的数据格式有问题或返回失败了，并不会报错。而且只支持GET而不支持POST等其它类型的HTTP请求。
+	```
+
+###常见笔试题<a name="written"/> [回到顶部](#top)
+===========
 9. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
 	```javascript
@@ -109,15 +120,6 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	   	else 
 	   		return null;
 	}
-	```
-
-11. JSONP跨域原理解析
-	
-	```javascript
-	原理：利用在页面中创建<script>节点的方法向不同域提交HTTP请求并且可在url中指定回调函数，  
-		  获取json数据并在指定的回调函数中执行。  
-
-	缺点：如果返回的数据格式有问题或返回失败了，并不会报错。而且只支持GET而不支持POST等其它类型的HTTP请求。
 	```
 
 12. 也是YY一道面试题，考察this作用域。
