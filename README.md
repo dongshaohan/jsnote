@@ -9,9 +9,8 @@
 
 ###<a name="js">JavaScript细节</a>
 1. underfined不是关键字，要让一个变量指向未定义或删除该变量，`xxx = underfined`是错误的写法，因为
-underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，
-所以正确写法是使用void 加上任何数字，如`var xxx = void 0`，void加数字结果总是返回underfined。
-（ps: typeof undefined  // 结果为underfined）
+underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，所以正确写法是使用void加上任何数字，
+如`var xxx = void 0`，void加数字结果总是返回underfined。（ps: typeof undefined  // 结果为underfined）
 
 2. underfined、null、0、false、NaN、空字符串的逻辑结果均为false
 
