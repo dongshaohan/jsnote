@@ -52,7 +52,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 所有的支持二进制浮点数运算（绝大部分都是 IEEE 754[1] 的实现）都存在浮点数的运算误差。
 	
 	```javascript
-	0.7 + 0.1  // 输出 0.7999999999  
+	0.7 + 0.1  // 输出 0.7999999999:confounded:
 	0.2 + 0.6  // 输出 0.8
 	```
 
@@ -63,7 +63,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	```javascript
 	// 解决方法  
 	// 通过toFixed方法来指定四舍五入的小数位数  
-	(0.2 + 0.1).toFixed(1)  // 0.3  
+	(0.2 + 0.1).toFixed(1)  // 0.3:smirk:
 	(0.2 * 0.1).toFixed(1)  // 0.2
 	```
 
@@ -262,8 +262,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 <br />
 
 ###<a name="written">常见面试题</a>
-> 工作过程中你遇到哪些困难，你怎么解决？
->> 工作过程中有哪些令你印象比较深刻的内容或过程？
+> 工作过程中你遇到哪些困难，你怎么解决？:heavy_exclamation_mark:
+>> 工作过程中有哪些令你印象比较深刻的内容或过程？:heavy_exclamation_mark:
 
 1. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
