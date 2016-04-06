@@ -516,6 +516,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 ###<a name="browser">浏览器相关</a>
 1. [浏览器渲染机制](https://github.com/slashhuang/translation/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6)
 	
+2. [浏览器渲染原理](http://imweb.io/topic/56841c864c44bcc56092e3fa)
 
 [回到顶部](#top)
 <br />
