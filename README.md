@@ -52,7 +52,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 所有的支持二进制浮点数运算（绝大部分都是 IEEE 754[1] 的实现）都存在浮点数的运算误差。
 	
 	```javascript
-	0.7 + 0.1  // 输出 0.7999999999:confounded:
+	0.7 + 0.1  :confounded:// 输出 0.7999999999
 	0.2 + 0.6  // 输出 0.8
 	```
 
@@ -63,7 +63,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	```javascript
 	// 解决方法  
 	// 通过toFixed方法来指定四舍五入的小数位数  
-	(0.2 + 0.1).toFixed(1)  // 0.3:smirk:
+	(0.2 + 0.1).toFixed(1)  :smirk:// 0.3
 	(0.2 * 0.1).toFixed(1)  // 0.2
 	```
 
