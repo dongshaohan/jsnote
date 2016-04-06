@@ -3,6 +3,7 @@
 * [奇淫技巧](#skill)
 * [常见面试题](#written)
 * [前端模块化](#module) 
+* [浏览器相关](#browser)
 * [web性能优化](#optimize)
 * [提高工作效率](#product) 
 
@@ -261,6 +262,10 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 <br />
 
 ###<a name="written">常见面试题</a>
+> !基本都会问的!
+>> 工作过程中你遇到哪些困难，你怎么解决？
+>>> 工作过程中有哪些令你比较印象深刻的东西或过程？
+
 1. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
 	```javascript
@@ -505,6 +510,11 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	CMD 里，没有全局 require，而是根据模块系统的完备性，提供 seajs.use 来实现模块系统的加载启动。
 	CMD 里，每个 API 都简单纯粹。
 	```
+
+[回到顶部](#top)
+<br />
+
+###<a name="browser">浏览器相关</a>
 
 [回到顶部](#top)
 <br />
