@@ -11,7 +11,7 @@
 ###<a name="js">JavaScript细节</a>
 1. underfined不是关键字，要让一个变量指向未定义或删除该变量，`xxx = underfined`是错误的写法，因为
 underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，所以正确写法是使用void加上任何数字，
-如`var xxx = void 0`，void加数字结果总是返回underfined。（ps: typeof undefined  // 结果为underfined）
+如`var xxx = void 0`，void加数字结果总是返回underfined。（ps: typeof undefined  // 结果为underfined:grin:）
 
 2. underfined、null、0、false、NaN、空字符串的逻辑结果均为false
 
@@ -262,9 +262,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 <br />
 
 ###<a name="written">常见面试题</a>
-> !基本都会问的!
->> 工作过程中你遇到哪些困难，你怎么解决？
->>> 工作过程中有哪些令你比较印象深刻的东西或过程？
+> 工作过程中你遇到哪些困难，你怎么解决？
+>> 工作过程中有哪些令你印象比较深刻的内容或过程？
 
 1. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
