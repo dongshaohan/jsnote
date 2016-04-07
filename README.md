@@ -518,6 +518,14 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	
 2. [浏览器渲染原理](http://imweb.io/topic/56841c864c44bcc56092e3fa)
 
+3. DOM操作慢根本原因
+
+	```javascript
+	1. DOM是给JS操作HTML及XML文档提供了API，两个相互独立的功能只要通过接口彼此连接，就会产生消耗。
+	而且它在浏览器中是以JavaScript实现的，JS本身的执行效率就低于JAVA或者C（JS是解释型语言，边编译边执行；JAVA或者C是编译型语言，一次编译，直接执行），
+	所以DOM有点慢。
+	```
+
 [回到顶部](#top)
 <br />
 
