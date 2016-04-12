@@ -553,7 +553,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 ###<a name="http">HTTP相关</a>
 1. http状态码
 	
-	302状态码面试常见 背起来～
+	302状态码面试常问 背起来～
 	```javascript
 	1xx（临时响应）表示临时响应并需要请求者继续执行操作的状态代码。
 
