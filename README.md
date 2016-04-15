@@ -399,7 +399,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-7. 37互娱一道印象比较深的javascript笔试题
+7. 37游戏一道印象比较深的javascript笔试题
 	
 	```javascript
 	var x = 20;
