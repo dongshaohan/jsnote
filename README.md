@@ -191,6 +191,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	
 	```javascript
 	当函数可以记住并访问所在的词法作用域，即使函数是在当前词法作用域之外执行，这时就产生了闭包。
+	
 	用途：
 	1. 使用闭包可以在JavaScript中模拟块级作用域。
 	2. 闭包可以用于在对象中创建私有变量。
@@ -266,6 +267,12 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 	// 比深复制快10% - 20% 但对Date对象不适用
 	var newObject = JSON.parse(JSON.stringify(obj));
+	```
+
+10. arguments对象转换为数组
+	
+	```javascript
+	var aArguments = [].slice.call(arguments);
 	```
 	
 [回到顶部](#top)
