@@ -274,6 +274,33 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	```javascript
 	var aArguments = [].slice.call(arguments);
 	```
+
+11. css制作三角形
+
+	```javascript
+	1. CSS border实现三角
+	{ 
+		width: 0; 
+		height: 0; 
+		border-left: 50px solid transparent; 
+		border-right: 50px solid transparent; 
+		border-bottom: 100px solid red; 
+	} 
+
+	2. 三角生成新法@font-face
+	@font-face{
+	    font-family: web; 
+	    src: url(web-webfont.eot);	/* IE */
+	}
+	@font-face {
+	    font-family: web;
+	    src: url(web-webfont.ttf);
+	}
+
+	.font_cor {
+	    font-family: 'web';
+	}
+	```
 	
 [回到顶部](#top)
 <br />
