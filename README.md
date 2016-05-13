@@ -27,7 +27,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 4. 数组传递和复制
 	
 	```javascript
-	ar a = [1,2,3];
+	var a = [1,2,3];
 	var b = a;
 	delete b[1];
 	console.log(a); // [1, undefined, 3]
