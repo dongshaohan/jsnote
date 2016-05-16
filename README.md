@@ -481,7 +481,28 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-9. 考察arguments
+9. 网易游戏一道javascript笔试题
+	
+	```javascript
+	function say667 () {
+		var num = 666;
+		var sayAlert = function () {
+			alert(num);
+		};
+		num++;
+		return sayAlert;
+	};
+	var sayAlert = say667();
+	sayAlert();
+
+	/*
+	 * 答案: 667
+	 * 这道题如果闭包没理解清楚就会搞错，num++是在闭包外面执行，闭包内不作处理，
+	 * 所以闭包返回的值始终是num++后的值，即667。
+	 */
+	```
+
+10. 考察arguments
 
 	```javascript
 	var length = 10;
@@ -504,7 +525,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	 */
 	```
 
-10. 函数声明优于变量声明 
+11. 函数声明优于变量声明 
 
 	```javascript
 	console.log(typeof fn); 
