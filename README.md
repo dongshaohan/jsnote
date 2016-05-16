@@ -743,6 +743,15 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	14.缓存Ajax
 	```
 
+2. 移动端相关
+
+	```javascript
+	1. img src 比 background 方式展示图片，使用到的内存资源可能会更多。
+	2. 移动端的内存是有限的，在进行代码设计是要充分考虑有可能带来的性能瓶颈。
+	3. 图片很浪费内存，使用要小心。
+	4. visibility:hidden, display:none都可以节约内存。
+	```
+
 [回到顶部](#top)
 <br />
 
