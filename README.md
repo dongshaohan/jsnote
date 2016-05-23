@@ -81,7 +81,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 9. JSONP跨域原理解析（面试常问）
 	
 	```javascript
-	原理：利用在页面中创建<script>节点的方法向不同域提交HTTP请求并且可在url中指定回调函数，  
+	原理：利用在页面中创建script标签的方法向不同域提交HTTP请求并且可在url中指定回调函数，  
 		  获取json数据并在指定的回调函数中执行。  
 
 	缺点：如果返回的数据格式有问题或返回失败了，并不会报错。而且只支持GET而不支持POST等其它类型的HTTP请求。
@@ -749,7 +749,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	1. img src 比 background 方式展示图片，使用到的内存资源可能会更多。
 	2. 移动端的内存是有限的，在进行代码设计是要充分考虑有可能带来的性能瓶颈。
 	3. 图片很浪费内存，使用要小心。
-	4. visibility:hidden, display:none都可以节约内存。
+	4. visibility:hidden，display:none都可以节约内存。
 	```
 
 [回到顶部](#top)
