@@ -197,6 +197,9 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	2. 闭包可以用于在对象中创建私有变量。
 	```
 
+13. [null与undefined的区别](http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html)
+
+
 [回到顶部](#top)
 <br />
 
