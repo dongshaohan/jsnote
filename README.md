@@ -562,7 +562,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 12. 打乱数组
 
 	```javascript
-	function randomSort(arr) {
+	function randomSort (arr) {
 		arr.sort(function (a, b) {
 			// 当sort函数返回值为true的时候就交换两个数组项的顺序，否则就不交换。
 			// 用Math.random()函数生成0~1之间的随机数与0.5比较，返回-1或1
@@ -570,6 +570,12 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 		});
 		return arr;
 	}
+	```
+
+13. 数组找重
+
+	```javascript
+
 	```
 
 [回到顶部](#top)
