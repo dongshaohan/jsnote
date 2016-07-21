@@ -572,10 +572,24 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	}
 	```
 
-13. 数组找重
+13. 数组找重（数组去重举一反三）
 
 	```javascript
+	function unique (arr) {
+	    var ret = []
+	    var hash = {}
 
+	    for ( var i = 0, len = arr.length; i < len; i++ ) {
+	        var elem = arr[i];
+
+	        if ( !hash[elem] ) {
+	            hash[elem] = true;
+	        } else {
+	            ret.push(elem);
+	        }
+	    }
+	    return ret
+	}
 	```
 
 [回到顶部](#top)
