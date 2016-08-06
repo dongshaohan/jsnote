@@ -592,6 +592,49 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	}
 	```
 
+14. 统计字符串出现次数最多的字符
+
+	```javascript
+	第一种，也是最常规的:
+	var str = 'asdaa';
+	var obj = {};
+	for ( var i = 0, k, l = str.lengthk; i < l; i++ ) {
+		k = str.charAt(i);
+		if ( obj[k] ) { 
+			obj[k]++;
+		} else {
+			obj[k] = 1;
+		}
+	}
+	var num = 0;
+	var name = null;
+	for ( var j in obj ) {
+		if ( obj[j] > num ) {
+			num = obj[j];
+			name = j;
+		}
+	}
+	console.log("出现次数最多的字符是: ", name, '次数为: ', num);
+
+	第二种，效率高点的:
+	var str = 'strswswdwdwdwq';
+	var freqs = {}; // 用来记录所有的字符的出现频次
+	var mostFreqChar = ''; //用来记录最大频次的字符
+	var count = 0;
+	for ( var i = 0; i < str.length; i++ ) {
+	    var char = str[i];
+	    if ( !freqs[char] ) {
+	        freqs[char] = 0;
+	    }
+	    freqs[char] ++;
+	    if ( mostFreqChar == '' || freqs[char] > freqs[mostFreqChar] ) {
+	        mostFreqChar = char;
+	        count = freqs[char];
+	    }
+	}
+	console.log("出现次数最多的字符是: ", mostFreqChar, '次数为: ', count);
+	```
+
 [回到顶部](#top)
 <br />
 
