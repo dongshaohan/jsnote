@@ -214,9 +214,9 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	```	
 
 15. 原型链
-
 	* [详解1](http://www.cnblogs.com/xdp-gacl/p/3704722.html)
 	* [详解2](http://www.108js.com/article/article1/10201.html?id=1092)
+
 
 [回到顶部](#top)
 <br />
