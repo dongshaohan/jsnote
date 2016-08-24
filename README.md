@@ -172,7 +172,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
      */
 	```
 
-11. 简单template实现原理。
+11. [简单template实现原理](http://www.cnblogs.com/dojo-lzz/p/5518474.html)
 
 	模板写法:
 	```javascript
