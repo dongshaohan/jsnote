@@ -639,6 +639,39 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	console.log("出现次数最多的字符是: ", mostFreqChar, '次数为: ', count);
 	```
 
+15. 阿里境外电商p6前端面试题
+
+	```javascript
+	var a = 1;
+    function b () {
+        a = 10;
+        return;
+        function a () {};
+    };
+    b();
+    console.log(a);
+
+    /*
+     * 答案：1
+     * 考察局部变量与变量声明提升
+     */
+	```
+
+16. 阿里境外电商p6前端面试题
+
+	```javascript
+	var x = 5;
+	function z (y) {
+		y = y * 10;
+	};
+	z();
+	console.log(x);
+	/*
+     * 答案：5
+     * 值传递并不会改变原始值
+     */
+	```
+
 [回到顶部](#top)
 <br />
 
