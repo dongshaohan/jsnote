@@ -358,6 +358,18 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	    font-family: 'web';
 	}
 	```
+
+12. 创建唯一id
+
+	```javascript
+	function guidGenerator() {
+	    var S4 = function() {
+	       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+	    };
+
+	    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+	  }
+	```
 	
 [回到顶部](#top)
 <br />
