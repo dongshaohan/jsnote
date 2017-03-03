@@ -719,7 +719,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	function z (y) {
 		y = y * 10;
 	};
-	z();
+	z(x);
 	console.log(x);
 	/*
      * 答案：5
