@@ -260,6 +260,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 18. [rem自适应布局](http://www.cnblogs.com/breakdown/p/4231708.html)
 
+19. [ajax底层实现](http://www.cnblogs.com/mingmingruyuedlut/archive/2011/10/18/2216553.html)
+
 
 [回到顶部](#top)
 <br />
