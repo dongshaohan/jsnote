@@ -389,6 +389,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 >>> 工作过程中你遇到哪些困难，你怎么解决？:heavy_exclamation_mark:
 >>>> 工作过程中有哪些令你印象比较深刻的内容或过程？:heavy_exclamation_mark:
 >>>>> [网络面试题目](https://zhuanlan.zhihu.com/p/21474308)
+>>>>>> [前端面试指南](https://zhuanlan.zhihu.com/p/25859524)
 
 1. 今天面试YY遇到一道javascript笔试题，大概意思就是数组去重，当时自己写的方法不够高效，过后科普了一下，以此记录下来。
 
