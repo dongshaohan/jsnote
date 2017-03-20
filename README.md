@@ -379,6 +379,14 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 	  }
 	```
+
+13. 二维数组转一维数组
+
+	```javascript
+	const arr=[ [1,2,3], [3,4], [5] ];
+    console.log( [].concat.apply([], arr) );
+	```
+
 	
 [回到顶部](#top)
 <br />
