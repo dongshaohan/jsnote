@@ -371,8 +371,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 12. 创建唯一id
 
 	```javascript
-	function guidGenerator() {
-	    var S4 = function() {
+	function guidGenerator () {
+	    var S4 = function () {
 	       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
 	    };
 
@@ -741,7 +741,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-###<a name="mobile">移动端BUG解决</a>
+<a name="mobile">移动端BUG解决</a>
 1. 输入框聚焦被输入法挡住BUG（参考weui的源码）
 
 	```javascript
