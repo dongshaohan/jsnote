@@ -764,7 +764,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
     }
 	```
 
-2. 移动端rem动态适配
+2. 移动端适配
 	* [flexible](http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)
 	* [详解](https://segmentfault.com/a/1190000003690140)
 
