@@ -10,7 +10,7 @@
 * [提高工作效率](#product) 
 
 
-###<a name="js">JavaScript细节</a>
+<a name="js">JavaScript细节</a>
 1. underfined不是关键字，要让一个变量指向未定义或删除该变量，`xxx = underfined`是错误的写法，因为
 underfined可以当成一个变量来定义，就是说`var underfined = xxx`这样是合法的，所以正确写法是使用void加上任何数字，
 如`var xxx = void 0`，void加数字结果总是返回underfined。（ps: typeof undefined  // 结果为underfined:grin:）
@@ -266,7 +266,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-###<a name="skill">奇淫技巧</a>
+<a name="skill">奇淫技巧</a>
 1. 向下取整
 
 	```javascript
@@ -391,7 +391,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-###<a name="written">常见面试题</a>
+<a name="written">常见面试题</a>
 > [前端面试技巧可参考](https://www.zhihu.com/question/41986174#answer-33137595)
 >> [一份优秀的前端工程师简历是怎么样的](https://www.zhihu.com/question/23150301)
 >>> 工作过程中你遇到哪些困难，你怎么解决？:heavy_exclamation_mark:
@@ -764,10 +764,14 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
     }
 	```
 
+2. 移动端rem动态适配
+
+
+
 [回到顶部](#top)
 <br />
 
-###<a name="module">前端模块化</a>
+<a name="module">前端模块化</a>
 1. AMD和CMD的区别（面试常问）
 
 	```javascript
@@ -803,7 +807,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-###<a name="browser">浏览器相关</a>
+<a name="browser">浏览器相关</a>
 1. [浏览器渲染机制](https://github.com/slashhuang/translation/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6)
 	
 2. [浏览器渲染原理](http://imweb.io/topic/56841c864c44bcc56092e3fa)
@@ -838,7 +842,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-###<a name="http">HTTP相关</a>
+<a name="http">HTTP相关</a>
 1. http状态码
 	
 	302状态码面试常问 背起来～
@@ -890,7 +894,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-###<a name="optimize">web性能优化</a>
+<a name="optimize">web性能优化</a>
 1. YaHoo Web优化的14条原则
 
 	```javascript
@@ -978,7 +982,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 [回到顶部](#top)
 <br />
 
-###<a name="product">提高工作效率</a>
+<a name="product">提高工作效率</a>
 1. 做好时间管理，要有工作紧急优先级
 
 	```javascript
