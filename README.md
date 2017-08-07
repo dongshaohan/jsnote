@@ -763,6 +763,30 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
      * 值传递并不会改变原始值
      */
 	```
+	
+17. YY面试题-数组左边为奇数, 右边为偶数（空间复杂度O(1), 时间复杂度为O(n)）
+
+	```javascript	
+	function sortEvenOdd (arr) {
+	    var i = 0;
+	    var j = arr.length - 1;
+	    var tmp = 0;
+
+	    while ( i < j ) {
+		if ( arr[i] % 2 == 1 && j > i ) { 
+		    i++;
+		}
+		if ( arr[j] % 2 == 0 && j > i ) {
+		    j--;
+		}
+		tmp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = tmp;
+	    }
+	    return arr;
+	};
+	sortEvenOdd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+	```
 
 [回到顶部](#top)
 <br />
