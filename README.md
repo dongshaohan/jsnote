@@ -1,4 +1,4 @@
-##<a name="top">前端笔记</a>
+<a name="top">前端笔记</a>
 * [JavaScript细节](#js)
 * [奇淫技巧](#skill)
 * [常见面试题](#written)
