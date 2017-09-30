@@ -187,6 +187,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	* 遇到普通的文本直接当成字符串拼接。
 	* 遇到`interpolate`(即`<%= %>`)，将其中的内容当成变量拼接在字符串中。
 	* 遇到`evaluate`(即`<% %>`)，直接当成代码。
+	
 
 	```javascript
 	 function escapeHtml (str) {
@@ -204,14 +205,14 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
         var source = "var __t='';__t+='";
         var index = 0;
         tpl = tpl.replace(/\r|\n|\u2028|\u2029/g, '');
-        tpl.replace(/<%=([\s\S]+?)%>|<%-([\s\S]+?)%>|<%([\s\S]+?)%>/g, function(match, str, escape, jsCode, offset){
-            source += tpl.slice(index, offset).replace(/'/g, '\\\'');
+        tpl.replace(/<%=([\s\S]+?)%>|<%-([\s\S]+?)%>|<%([\s\S]+?)%>/g, function (match, str, escape, jsCode, offset) {
+            source += tpl.slice(index, offset).replace(/'/g, '\\\''); 
             index = offset + match.length;
-            if(str){
+            if ( str ) {
                 source += "';\n__t+=" + str + ";\n__t+='";
-            }else if(escape){
+            } else if ( escape ) {
                 source += "';\n__t+=escapeHtml(" + escape + ");\n__t+='";
-            }else if(jsCode){
+            } else if ( jsCode ) {
                 source += "';\n" + jsCode + "\n__t+='";
             }
         });
