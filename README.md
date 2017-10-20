@@ -254,42 +254,9 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	* [详解2](http://www.108js.com/article/article1/10201.html?id=1092)
 
 16. setTimeout倒计时准确写法
+	* [详解1](https://github.com/gomeplusFED/blog/blob/master/2016-04/do-you-really-understand-how-to-write-a-countdown-by-javascript.md)
+	* [详解2](https://github.com/fwon/blog/issues/13)
 	
-	```javascript
-	1. 当你的网页没有处于被浏览时，这个网页的js不会运行或者暂时阻塞，这是浏览器为了节省资源的行为，各个浏览器做法都不大一样。
-	2. 即使你的js正在运行，定时器也不会是准确的。setTimeout是基于事件循环的，它只表明任务执行之前的最短时间。
-	3. 如果你需要获得准确的时间，使用Date.now()。
-	
-	/*
-	* 参数单位都是毫秒
-	* @param time 时间间隔
-	* @param startT 开始时间
-	*/
-	function countdown (time, startT) {
-        if ( !startT ) startT = Date.now();
-        var diff = time + startT - Date.now();
-
-        if ( diff > 0 ) {
-            var s = Math.floor( diff / 1000 % 60 );
-            var m = Math.floor( diff / 1000 / 60 % 60 );
-            var h = Math.floor( diff / 1000 / 60 / 60 % 24 );
-
-            h = h > 9 ? h : '0' + h;
-            m = m > 9 ? m : '0' + m;
-            s = s > 9 ? s : '0' + s;
-
-            var str = h + ':' + m + ':' + s;
-            console.log(str);
-        } else {
-            console.log('倒计时结束');
-        }
-
-        setTimeout(function() {
-            countdown(time, startT);
-        }, 100);
-    };
-	```
-
 17. this详解
 	* [详解1](http://www.cnblogs.com/xdp-gacl/p/3704722.html)
 
