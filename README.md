@@ -1085,6 +1085,9 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	4. visibility:hidden，display:none都可以节约内存。
 	```
 
+3.![H5性能优化图](https://pic2.zhimg.com/80/v2-27c969f461fa6b3f8fa630ed2b21e653_hd.jpg)
+
+
 [回到顶部](#top)
 <br />
 
