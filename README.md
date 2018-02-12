@@ -264,6 +264,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 19. [ajax底层实现](http://www.cnblogs.com/mingmingruyuedlut/archive/2011/10/18/2216553.html)
 
+20. [prototype和__proto__详解](https://www.jianshu.com/p/7f70b3d3a2a9)
 
 [回到顶部](#top)
 <br />
