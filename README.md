@@ -190,37 +190,33 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	
 
 	```javascript
-	 function escapeHtml (str) {
-        return (str+'').replace(/(<)|(>)/g, function(match, $1, $2){
-            if ( $1 ) {
-                return '&lt;';
-            } else if( $2 ) {
-                return '&gt;';
-            }
-        });
-    };
-
-    function parseTpl (data, tplStr) {
-        var tpl = tplStr;
-        var source = "var __t='';__t+='";
-        var index = 0;
-        tpl = tpl.replace(/\r|\n|\u2028|\u2029/g, '');
-        tpl.replace(/<%=([\s\S]+?)%>|<%-([\s\S]+?)%>|<%([\s\S]+?)%>/g, function (match, str, escape, jsCode, offset) {
-            source += tpl.slice(index, offset).replace(/'/g, '\\\''); 
-            index = offset + match.length;
-            if ( str ) {
-                source += "';\n__t+=" + str + ";\n__t+='";
-            } else if ( escape ) {
-                source += "';\n__t+=escapeHtml(" + escape + ");\n__t+='";
-            } else if ( jsCode ) {
-                source += "';\n" + jsCode + "\n__t+='";
-            }
-        });
-        source += "';__t+='" + tpl.slice(index) + "';";
-        source += 'return __t;';
-        var func = new Function('obj', 'escapeHtml', source);
-        return func.call(null, data, escapeHtml);
-    };
+	 function template(data, tplStr, opt) {
+         opt = opt || {};
+         var obj = opt.name || 'obj';
+         var tpl = tplStr;
+         var source = "var __t='';__t+='";
+         var index = 0;
+     
+         tpl = tpl.replace(/\r|\n|\u2028|\u2029/g, '');
+         tpl.replace(/<%=([\s\S]+?)%>|<%-([\s\S]+?)%>|<%([\s\S]+?)%>/g, function (match, str, escape, jsCode, offset) {
+             source += tpl.slice(index, offset).replace(/'/g, '\\\'');
+             index = offset + match.length;
+     
+             if (str) {
+                 source += "';\n__t+=" + str + ";\n__t+='";
+             } else if (escape) {
+                 source += "';\n__t+=(";
+                 source += escape;
+                 source += " || '').replace(/(<)|(>)/g, function(match, $1, $2){if($1){return '&lt;'}else if($2){return '&gt;'}});\n__t+='";
+             } else if (jsCode) {
+                 source += "';\n" + jsCode + "\n__t+='";
+             }
+         });
+         source += "';__t+='" + tpl.slice(index).replace(/'/g, '\\\'') + "';";
+         source += 'return __t;';
+         var func = new Function(obj, source);
+         return func.call(null, data);
+     };
 	```
 
 12. 闭包
