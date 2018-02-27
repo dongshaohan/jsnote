@@ -442,7 +442,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	    var ret = url.substr(1).match(reg); // reg没有全局标志，所以ret[0]是完整的匹配，arr[1]是第一个括号里捕获的字串，依此类推。
 
 	    if ( ret ) 
-	   		return unescape(ret[2]); // ret[2]保存的是reg第二个括号捕获的字串，unescape用来解码url中的字符。
+	   		return decodeURIComponent(ret[2]); // ret[2]保存的是reg第二个括号捕获的字串，unescape用来解码url中的字符。
 	   	else 
 	   		return null;
 	}
