@@ -992,7 +992,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	505   （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。
 	```
 
-2. 浏览器缓存
+2. [浏览器缓存](https://segmentfault.com/a/1190000008377508)
 
 [回到顶部](#top)
 <br />
