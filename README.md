@@ -452,7 +452,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
         var ret = url.split("?")[1].match(reg);
         
         if ( ret ) 
-	   		return unescape(ret[2]); // ret[2]保存的是reg第二个括号捕获的字串，unescape用来解码url中的字符。
+	   		return decodeURIComponent(ret[2]); // ret[2]保存的是reg第二个括号捕获的字串，unescape用来解码url中的字符。
 	   	else 
 	   		return null;
     }
