@@ -913,9 +913,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	
 2. [浏览器渲染原理](http://imweb.io/topic/56841c864c44bcc56092e3fa)
 
-3. [DOM操作慢根本原因](https://leozdgao.me/why-dom-slow/)
-
-4. [浏览器渲染过程与性能优化](https://juejin.im/post/59d489156fb9a00a571d6509)
+3. [浏览器渲染过程与性能优化](https://juejin.im/post/59d489156fb9a00a571d6509)
 
 	```javascript
 	链接的文章已经讲得很清楚了，下面额外补几个内容。
