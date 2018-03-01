@@ -786,6 +786,21 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	};
 	sortEvenOdd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 	```
+	
+18. 美团面试题
+
+    ```javascript
+    setTimeout(() => console.log('a'), 0);
+    var p = new Promise((resolve) => {
+      console.log('b');
+      resolve();
+    });
+    p.then(() => console.log('c'));
+    p.then(() => console.log('d'));
+    console.log('e');
+    // 结果：b e c d a
+    // 任务队列优先级：promise.Trick()>promise的回调>setTimeout>setImmediate
+    ```
 
 [回到顶部](#top)
 <br />
