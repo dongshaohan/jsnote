@@ -262,6 +262,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 20. [prototype和__proto__详解](https://www.jianshu.com/p/7f70b3d3a2a9)
 
+21. ![defer和async的区别](http://segmentfault.com/img/bVcQV0)
+
 [回到顶部](#top)
 <br />
 
