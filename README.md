@@ -1101,6 +1101,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 
 3.![H5性能优化图](https://pic2.zhimg.com/80/v2-27c969f461fa6b3f8fa630ed2b21e653_hd.jpg)
 
+4. [添加骨架屏](https://xiaoiver.github.io/coding/2017/07/30/%E4%B8%BAvue%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E9%AA%A8%E6%9E%B6%E5%B1%8F.html)
 
 [回到顶部](#top)
 <br />
