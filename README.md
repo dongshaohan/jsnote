@@ -892,7 +892,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 <br />
 
 <a name="module">前端模块化</a>
-1. AMD和CMD的区别（面试常问）
+1. AMD和CMD的区别
 
 	```javascript
 	1. 对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。
@@ -965,7 +965,6 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 <a name="http">HTTP相关</a>
 1. http状态码
 	
-	302状态码面试常问 背起来～
 	```javascript
 	1xx（临时响应）表示临时响应并需要请求者继续执行操作的状态代码。
 
@@ -1102,6 +1101,8 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 	```
 
 3.![H5性能优化图](https://pic2.zhimg.com/80/v2-27c969f461fa6b3f8fa630ed2b21e653_hd.jpg)
+
+4.[网站性能优化实战——从12.67s到1.06s的故事](http://imweb.io/topic/5ab8c7832dd8083b7bedb859)
 
 [回到顶部](#top)
 <br />
