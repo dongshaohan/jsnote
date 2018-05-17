@@ -1103,6 +1103,7 @@ underfined可以当成一个变量来定义，就是说`var underfined = xxx`这
 3.![H5性能优化图](https://pic2.zhimg.com/80/v2-27c969f461fa6b3f8fa630ed2b21e653_hd.jpg)
 
 4.[网站性能优化实战——从12.67s到1.06s的故事](http://imweb.io/topic/5ab8c7832dd8083b7bedb859)
+
 5.[利用performance属性查看网页性能](https://www.cnblogs.com/zourong/p/5649841.html)
 
 [回到顶部](#top)
